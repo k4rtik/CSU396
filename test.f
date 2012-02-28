@@ -21,7 +21,7 @@ iszero (succ (pred 0));
 iszero (succ (succ (pred 0)));
 iszero (succ (succ (pred (pred 0))));
 
+if (iszero 0) then pred (succ (pred (succ 0))) else false;
+
 /*succ true;*/
 /*pred false;*/
-
-/*if (iszero 0) then pred (succ (pred (succ 0))) else false;*/
