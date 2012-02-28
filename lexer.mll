@@ -142,7 +142,7 @@ rule main = parse
 | "# line " ['0'-'9']+
     { lineno := extractLineno (text lexbuf) 7 - 1; getFile lexbuf }
 
-| ['0'-'9']+
+| ['-']? ['0'-'9']+
     { Parser.INTV{i=info lexbuf; v=int_of_string (text lexbuf)} }
 
 | ['0'-'9']+ '.' ['0'-'9']+
