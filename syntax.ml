@@ -7,7 +7,7 @@ open Support.Pervasive
 
 type ty =
     TyBool
-  | TyNat
+  | TyInt
 
 type term =
     TmTrue of info
@@ -59,7 +59,7 @@ let rec printty_Type outer tyT = match tyT with
 
 and printty_AType outer tyT = match tyT with
     TyBool -> pr "Bool"
-  | TyNat -> pr "Nat"
+  | TyInt -> pr "Int"
   | tyT -> pr "("; printty_Type outer tyT; pr ")"
 
 let printty tyT = printty_Type true tyT 

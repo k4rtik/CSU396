@@ -77,13 +77,13 @@ let rec typeof t =
        else error fi "arms of conditional have different types"
      else error fi "guard of conditional not a boolean"
   | TmZero(fi) ->
-      TyNat
+      TyInt
   | TmSucc(fi,t1) ->
-      if (=) (typeof t1) TyNat then TyNat
+      if (=) (typeof t1) TyInt then TyInt
       else error fi "argument of succ is not a number"
   | TmPred(fi,t1) ->
-      if (=) (typeof t1) TyNat then TyNat
+      if (=) (typeof t1) TyInt then TyInt
       else error fi "argument of pred is not a number"
   | TmIsZero(fi,t1) ->
-      if (=) (typeof t1) TyNat then TyBool
+      if (=) (typeof t1) TyInt then TyBool
       else error fi "argument of iszero is not a number"

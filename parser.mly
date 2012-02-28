@@ -31,7 +31,7 @@ open Syntax
 %token <Support.Error.info> SUCC
 %token <Support.Error.info> PRED
 %token <Support.Error.info> ISZERO
-%token <Support.Error.info> NAT
+%token <Support.Error.info> INT
 
 /* Identifier and constant value tokens */
 %token <string Support.Error.withinfo> UCID  /* uppercase-initial */
@@ -149,8 +149,8 @@ AType :
            { $2 } 
   | BOOL
       { TyBool }
-  | NAT
-      { TyNat }
+  | INT
+      { TyInt }
 
 
 /*   */
