@@ -6,7 +6,7 @@ open Support.Error
 (* Data type definitions *)
 type ty =
     TyBool
-  | TyNat
+  | TyInt
 
 type term =
     TmTrue of info
