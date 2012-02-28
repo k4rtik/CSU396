@@ -2,6 +2,7 @@
 
 true;
 if true then false else true;
+if false then 4 else 564;
 
 succ 5;
 /* pred -2; */
@@ -21,7 +22,7 @@ iszero (succ (pred 0));
 iszero (succ (succ (pred 0)));
 iszero (succ (succ (pred (pred 0))));
 
-if (iszero 0) then pred (succ (pred (succ 0))) else false;
+if (iszero 1) then pred (succ (pred (succ 0))) else false;
 
 /*succ true;*/
 /*pred false;*/

@@ -32,6 +32,7 @@ open Syntax
 %token <Support.Error.info> PRED
 %token <Support.Error.info> ISZERO
 %token <Support.Error.info> INT
+%token <Support.Error.info> IFTYPE
 
 /* Identifier and constant value tokens */
 %token <string Support.Error.withinfo> UCID  /* uppercase-initial */
@@ -151,6 +152,8 @@ AType :
       { TyBool }
   | INT
       { TyInt }
+  | IFTYPE
+      { TyIf }
 
 
 /*   */

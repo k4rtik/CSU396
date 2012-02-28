@@ -7,6 +7,7 @@ open Support.Error
 type ty =
     TyBool
   | TyInt
+  | TyIf
 
 type term =
     TmTrue of info

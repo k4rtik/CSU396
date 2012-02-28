@@ -74,7 +74,7 @@ let rec typeof t =
      if (=) (typeof t1) TyBool then
        let tyT2 = typeof t2 in
        if (=) tyT2 (typeof t3) then tyT2
-       else error fi "arms of conditional have different types"
+       else TyIf
      else error fi "guard of conditional not a boolean"
   | TmZero(fi) ->
       TyInt
