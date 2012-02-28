@@ -134,7 +134,8 @@ ATerm :
   | INTV
       { let rec f n = match n with
               0 -> TmZero($1.i)
-            | n -> TmSucc($1.i, f (n-1))
+            | n when n>0 -> TmSucc($1.i, f (n-1))
+            | n when n<0 -> TmPred($1.i, f (n+1))
           in f $1.v }
 
 /* All type expressions */
