@@ -96,6 +96,12 @@ and printtm_ATerm outer t = match t with
        | TmSucc(_,s) -> f (n+1) s
        | _ -> (pr "(succ "; printtm_ATerm false t1; pr ")")
      in f 1 t1
+  | TmPred(_,t1) ->
+     let rec f n t = match t with
+         TmZero(_) -> pr (string_of_int n)
+       | TmPred(_,s) -> f (n-1) s
+       | _ -> (pr "(pred "; printtm_ATerm false t1; pr ")")
+     in f (-1) t1
   | t -> pr "("; printtm_Term outer t; pr ")"
 
 let printtm t = printtm_Term true t 
